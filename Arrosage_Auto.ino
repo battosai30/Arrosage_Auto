@@ -43,6 +43,7 @@ Serial.print(getTouch(&waterLevel));
 Serial.print(",");
 Serial.print(getTouch(&waterLevelRef));
 Serial.print(",");
+Serial.flush();
 Serial.println(getBatteryLevel());
 }
 
@@ -61,9 +62,9 @@ return measured;
 byte getBatteryLevel() {
   
   analogReference(INTERNAL2V5);
-  delay(1);
+  sleep(10);
   analogRead(128 + 11);
-  delay(1);
+  sleep(10);
   return  constrain(((((analogRead(128 + 11)+analogRead(128 + 11))/2.0)*2.5/1024.0*2)-3.4)/(4.1-3.4)*100,0,100);
   
 }
