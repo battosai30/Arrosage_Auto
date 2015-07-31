@@ -1,13 +1,15 @@
 #include <CapTouch.h>
 
-#define HUMIDITY P2_1
-#define WATERLEVEL P2_3
-#define WATERLEVELREF P2_2
+#define HUMIDITY P2_1 // pin sur lequel on mesure l'humidité de la terre
+#define WATERLEVEL P2_3 // pin sur lequel on va mesurer le niveau d'eau
+#define WATERLEVELREF P2_2 // pin sur lequel on va mesurer la reference pour le calcul de niveau d'eau
+
 #define LED1 P2_4
 #define LED2 P2_5
+
 #define PUMP P2_0
 
-#define DEBUG
+#define DEBUG // à commenter si on ne veut pas débuguer
 
 #define TIME_PUMP 5000
 #define H_THRESHOLD 30000
